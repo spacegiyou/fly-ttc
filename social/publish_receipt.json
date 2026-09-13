@@ -1,0 +1,62 @@
+{
+  "github_url": "https://github.com/spacegiyou/fly-ttc",
+  "github_visibility": "PUBLIC",
+  "branch": "main",
+  "typefully_draft_id": 10744660,
+  "typefully_social_set_id": 317136,
+  "typefully_url": "https://typefully.com/?d=10744660&a=317136",
+  "x_account": "@FrontierSignalK",
+  "status": "scheduled",
+  "scheduled_at_local": "2026-09-13T22:00:00+09:00",
+  "scheduled_at_utc": "2026-09-13T13:00:00Z",
+  "timezone": "Asia/Seoul",
+  "natural_posting_time_jitter_minutes": 0,
+  "method": "authenticated browser UI",
+  "platforms_enabled": [
+    "x"
+  ],
+  "post_count": 4,
+  "all_post_texts_verified_against_local_copy": true,
+  "weighted_post_lengths": [
+    202,
+    228,
+    230,
+    241
+  ],
+  "media": [
+    {
+      "post": 1,
+      "file": "docs/figures/repo_header.png",
+      "sha256": "676e146443dac04ff56d1a98e4d0ad9279d3121c7daddddda62626b9c01bb6d0"
+    },
+    {
+      "post": 2,
+      "file": "docs/figures/confirmation_metrics.png",
+      "sha256": "973918fdfbf0503c933519cb57b0540592867fc0a9b370e98da8f5037a5b1650"
+    },
+    {
+      "post": 3,
+      "file": "docs/figures/x_card.png",
+      "sha256": "a9294714c5ab04b5efc9de7b68a05f9ebe7bcb024d33284710492d54139874d1"
+    },
+    {
+      "post": 4,
+      "file": "exports/fly_ttc_nexar_card_en.mp4",
+      "duration_seconds": 15,
+      "sha256": "bf3e2b903101b011afb8acf7b3c1f660464ad30fe4ae074fe34103465d3fef80"
+    }
+  ],
+  "ui_evidence": [
+    "Connected Accounts: @FrontierSignalK",
+    "Schedule: September 2026, Sun Sep 13, 22:00, Asia/Seoul",
+    "Confirm Today, 22:00 (Asia / Seoul)",
+    "Queue: 1 in queue; Today Sep13;22:00;fly-ttc — frozen proxy, disjoint confirmation",
+    "Toast: Scheduled"
+  ],
+  "validation": {
+    "tests_passed": 179,
+    "credential_scan": "passed",
+    "no_raw_video_or_cache_tracked": true,
+    "no_nexar_rescoring_for_publication": true
+  }
+}

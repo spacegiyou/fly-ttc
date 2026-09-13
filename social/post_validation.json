@@ -10,6 +10,9 @@
   "scheduled_utc": "2026-09-13T13:00:00Z",
   "account": "FrontierSignalK",
   "social_set_id": 317136,
-  "state": "assets_preparing",
-  "all_under_280": true
+  "state": "scheduled",
+  "all_under_280": true,
+  "draft_id": 10744660,
+  "typefully_url": "https://typefully.com/?d=10744660&a=317136",
+  "all_browser_post_texts_match": true
 }
