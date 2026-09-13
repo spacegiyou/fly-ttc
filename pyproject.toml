@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fly-ttc"
+version = "0.1.0"
+description = "Fixed optical-flow looming proxy evaluated on Nexar train clips"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26", "scipy>=1.12", "opencv-python-headless>=4.9",
+  "pandas>=2.2", "pyyaml>=6.0", "matplotlib>=3.8",
+  "scikit-learn>=1.4", "tqdm>=4.66", "huggingface_hub>=0.24",
+  "datasets>=2.20", "pyarrow>=16", "markdown>=3.6",
+]
+
+[project.optional-dependencies]
+gpu = ["torch>=2.2", "torchvision>=0.17"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+fly-ttc = "fly_ttc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

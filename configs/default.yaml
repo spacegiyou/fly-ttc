@@ -1,0 +1,92 @@
+seed: 0
+subset_n_pos: 50
+subset_n_neg: 50
+paths:
+  raw_dir: data/raw/nexar
+  manifest: data/manifests/subset_100_seed0.csv
+  output_dir: outputs/v0
+video:
+  target_fps: 15
+  short_side: 256
+  time_offset_s: 0.0
+  pos_window_pre_s: 8.0
+  pos_window_post_s: 1.0
+  negative_margin_s: 1.0
+  fps_warning_delta: 5.0
+flow:
+  method: farneback
+  farneback:
+    pyr_scale: 0.5
+    levels: 3
+    winsize: 21
+    iterations: 3
+    poly_n: 5
+    poly_sigma: 1.2
+    flags: 0
+v0:
+  center_weight: true
+  blur_ksize: 5
+  score: combined
+  ema: 0.3
+  flow_clip_percentile: 99.0
+  center_edge_weight: 0.3
+  sobel_ksize: 3
+  blob_diff_threshold: 0.04
+  blob_min_area_px: 16.0
+  blob_weight: 0.5
+v1:
+  enabled: false
+  emd_tau_s: 0.04
+  rf_size_px: 64
+  grid: 5
+  arm_width_frac: 0.33
+  l0: 2.0
+  l1: 2.0
+  gf_vth: 1.0
+eval:
+  val_frac: 0.2
+  fpr_target: 0.10
+  lead_windows_ms: [500, 1000, 1500]
+  alert_window_pre_s: 1.5
+  normalization_std_floor: 0.000001
+failure_tags:
+  reference_percentile: 95
+  pre_window_s: 1.5
+  radial_low_factor: 0.25
+  divergence_epsilon: 0.0001
+  good_loom_window_s: 1.0
+report:
+  n_traces: 12
+  dpi: 130
+  snapshot_offsets_s: [-1.0, 0.0, -0.2]
+  privacy_blur_ksize: 61
+
+# Frozen follow-up: physical ego-motion is not identifiable from a global affine fit.
+ego_motion:
+  method: affine
+  grid_step_px: 12
+  border_fraction: 0.05
+  center_exclusion_fraction: 0.5
+  irls_iterations: 8
+  huber_delta_px: 1.0
+  inlier_threshold_px: 1.5
+  min_inlier_fraction: 0.5
+  min_samples: 24
+  min_axis_span_fraction: 0.5
+  min_quadrants: 3
+  max_condition_number: 100.0
+  min_motion_px: 0.02
+followup:
+  baseline_run: outputs/v0
+  output_dir: outputs/ego_motion
+  source_manifest: data/manifests/train.csv
+  confirmation_manifest: data/manifests/confirmation_100_seed1.csv
+  confirmation_n_pos: 50
+  confirmation_n_neg: 50
+  confirmation_seed: 1
+  bootstrap_iterations: 2000
+  bootstrap_seed: 0
+  models: [v0_original, raw_flow_no_blob, affine_residual_no_blob, frame_difference]
+  primary_candidate: affine_residual_no_blob
+  primary_comparator: raw_flow_no_blob
+  diagnostic_ids: ['01538', '00300']

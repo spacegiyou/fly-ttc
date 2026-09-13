@@ -1,0 +1,53 @@
+experiment: local_visual_reflex_stage_a
+output_dir: outputs/synthetic/local_reflex
+seed: 20260913
+model:
+  highpass_tau_s: 0.25
+  lowpass_tau_s: 0.05
+  sample_spacing_px: 1
+  rf_size_px: 32
+  grid: 5
+  arm_width_fraction: 0.3333333333333333
+  arm_threshold: 0.0
+  output_tau_s: 0.05
+  aggregation: product
+  pathways: on_off
+timed_flow:
+  reference_dt_s: 0.06666666666666667
+  output_tau_s: 0.05
+  blur_ksize: 5
+  clip_percentile: 99.0
+  center_edge_weight: 0.3
+stimulus:
+  image_size: [128, 128]
+  duration_s: 2.0
+  focal_length_px: 96.0
+  object_radius: 1.0
+  initial_depth: 12.0
+  approach_speed: 4.0
+  supersample: 2
+  texture_contrast: 0.4
+  flicker_amplitude: 0.05
+matrix:
+  kinds: [loom, recede, linear_expand, translate, background_translation, rotation, flicker, static, loom_on_background]
+  schedules: [15hz, 30hz, 60hz, irregular]
+  contrasts: [0.4, 0.8]
+  polarities: [-1, 1]
+  offcenter_positions: [[0.25, 0.5], [0.75, 0.5], [0.5, 0.25], [0.5, 0.75]]
+  additional_approach_speeds: [3.0, 4.5]
+  nuisance_speed_scales: [2.0, 4.0]
+  translation_directions_rad: [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+  grating_speed_scales: [1.0, 2.0, 4.0]
+calibration:
+  contrast: 0.6
+  approach_speed: 3.5
+  schedule: 30hz
+  false_positive_target: 0.1
+controls:
+  n_direction_permutations: 5
+assessment:
+  warmup_s: 0.25
+  minimum_expansion_recall: 0.8
+  maximum_nuisance_false_positive_rate: 0.1
+  minimum_localized_detection_fraction: 0.8
+  maximum_median_sampling_relative_error: 0.25
