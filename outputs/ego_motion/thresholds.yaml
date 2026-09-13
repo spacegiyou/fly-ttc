@@ -1,0 +1,235 @@
+v0_original:
+  theta: 6.7908898322413265
+  fpr_target: 0.1
+  val_fpr: 0.1
+  n_val_negatives: 10
+  n_val_false_positives: 1
+  decision_rule: S > theta
+  calibration_unit: clip maximum
+  normalization:
+    S_div:
+      mean: 0.012326326358078494
+      std: 0.00987662155674192
+    S_rad:
+      mean: 0.35161051992994435
+      std: 0.367457070321432
+    S_blob:
+      mean: 0.1172968133425789
+      std: 0.4084451883106273
+    source: negative_validation
+    n_frames: 1343
+    video_ids: &id001
+    - 01088
+    - '01116'
+    - '01121'
+    - '01366'
+    - 01408
+    - 01459
+    - '01503'
+    - '01530'
+    - '01705'
+    - '01754'
+  seed: 0
+  evaluation_ids:
+  - 00019
+  - 00078
+  - 00081
+  - 00093
+  - '00143'
+  - '00254'
+  - '00300'
+  - 00418
+  - '00447'
+  - '00463'
+  - '00501'
+  - '00510'
+  - '00533'
+  - '00544'
+  - 00588
+  - '00623'
+  - 00629
+  - 00639
+  - '00675'
+  - '00705'
+  - '00742'
+  - '00773'
+  - '00776'
+  - 00823
+  - 00856
+  - 00877
+  - 00887
+  - 00900
+  - 00905
+  - 00911
+  - 00929
+  - 00935
+  - 00937
+  - 00957
+  - 00971
+  - 00979
+  - '01000'
+  - '01024'
+  - '01031'
+  - '01033'
+  - '01062'
+  - '01075'
+  - '01177'
+  - 01209
+  - '01210'
+  - '01213'
+  - '01217'
+  - 01229
+  - '01240'
+  - '01242'
+  - '01250'
+  - '01260'
+  - 01268
+  - 01318
+  - '01365'
+  - 01399
+  - 01429
+  - 01448
+  - '01510'
+  - 01538
+  - 01593
+  - '01606'
+  - 01618
+  - '01632'
+  - '01640'
+  - '01663'
+  - '01711'
+  - 01812
+  - 01878
+  - 01900
+  - 01912
+  - 01926
+  - 01968
+  - 01988
+  - 02019
+  - '02024'
+  - 02049
+  - 02085
+  - '02102'
+  - 02129
+  validation_ids:
+  - '00077'
+  - 00108
+  - '00235'
+  - 00469
+  - 00528
+  - '00617'
+  - '00750'
+  - '00751'
+  - 00769
+  - 00927
+  - 01088
+  - '01116'
+  - '01121'
+  - '01366'
+  - 01408
+  - 01459
+  - '01503'
+  - '01530'
+  - '01705'
+  - '01754'
+  usable_negative_validation_ids: *id001
+  comparison: S > theta
+raw_flow_no_blob:
+  theta: 6.825930914454727
+  fpr_target: 0.1
+  val_fpr: 0.1
+  n_val_negatives: 10
+  n_val_false_positives: 1
+  decision_rule: S > theta
+  calibration_unit: clip maximum
+  normalization:
+    S_div:
+      mean: 0.012326326358078494
+      std: 0.00987662155674192
+    S_rad:
+      mean: 0.35161051992994435
+      std: 0.367457070321432
+    S_blob:
+      mean: 0.0
+      std: 1.0e-06
+    source: original_negative_validation
+    n_frames: 1343
+    video_ids: &id002
+    - 01088
+    - '01116'
+    - '01121'
+    - '01366'
+    - 01408
+    - 01459
+    - '01503'
+    - '01530'
+    - '01705'
+    - '01754'
+  validation_ids: &id003
+  - '00077'
+  - 00108
+  - '00235'
+  - 00469
+  - 00528
+  - '00617'
+  - '00750'
+  - '00751'
+  - 00769
+  - 00927
+  - 01088
+  - '01116'
+  - '01121'
+  - '01366'
+  - 01408
+  - 01459
+  - '01503'
+  - '01530'
+  - '01705'
+  - '01754'
+  negative_calibration_ids: *id002
+affine_residual_no_blob:
+  theta: 6.895384484978015
+  fpr_target: 0.1
+  val_fpr: 0.1
+  n_val_negatives: 10
+  n_val_false_positives: 1
+  decision_rule: S > theta
+  calibration_unit: clip maximum
+  normalization:
+    S_div:
+      mean: 0.011913263447720894
+      std: 0.009618495660693237
+    S_rad:
+      mean: 0.3122744024231058
+      std: 0.34743200648670186
+    S_blob:
+      mean: 0.0
+      std: 1.0e-06
+    source: original_negative_validation
+    n_frames: 1343
+    video_ids: *id002
+  validation_ids: *id003
+  negative_calibration_ids: *id002
+frame_difference:
+  theta: 1.7825162143670823
+  fpr_target: 0.1
+  val_fpr: 0.1
+  n_val_negatives: 10
+  n_val_false_positives: 1
+  decision_rule: S > theta
+  calibration_unit: clip maximum
+  normalization:
+    S_div:
+      mean: 0.012811103437089987
+      std: 0.017075040052297725
+    S_rad:
+      mean: 0.0
+      std: 1.0e-06
+    S_blob:
+      mean: 0.0
+      std: 1.0e-06
+    source: original_negative_validation
+    n_frames: 1343
+    video_ids: *id002
+  validation_ids: *id003
+  negative_calibration_ids: *id002

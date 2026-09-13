@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "scope": "Saved scalar scores only; no video pixels or model inference.",
+  "original_files": {
+    "outputs/v0/clip_scores.csv": "c7f0bd95a3d4569564de30c8fc0e4f6dbbfefb6a19412f477f9485e2320f249b",
+    "outputs/v0/threshold.yaml": "c4f7b8052cbd42a559af8eb195e2f10902a5fe686c8fc101e3bea788843a2224",
+    "outputs/ego_motion/comparison.csv": "2e1eb96ef4dd8d27c5d6f9012e1e07bed1fec96c3b604cd74a63d2e1d0f6678a",
+    "outputs/ego_motion/metrics.json": "479f0a0e2e43ea21485bbbe4d14224ccf5da45bd1d4854feaafd5ec46491241f",
+    "outputs/synthetic/synthetic_summary.json": "0482504afd62cd1bd73ce13e35e24966d04fea2c125a161232c9cba4a6a873dc",
+    "outputs/review_response/audit.json": "bcce3efeeba6de230d2c4f659a79bdebeca7a49c38d1a938e7163bd9997d55c8",
+    "outputs/v0/frames/00300.parquet": "154ff1e17c86c7f3aa45925608f8f445926d375c24ce93bd38f4e89849fa98d0",
+    "outputs/v0/frames/01538.parquet": "59b5101cad9f116bd45ab3f2885b0b3a52635033fb3ab86e736110e1a8633302"
+  },
+  "hero": [
+    {
+      "video_id": "00300",
+      "label": 1,
+      "scene": "Highway",
+      "split": "evaluation",
+      "s_peak": 14.240634245723074,
+      "t_peak": 10.0,
+      "time_of_alert": 8.464,
+      "time_of_event": 10.064,
+      "theta_used": 6.7908898322413265,
+      "trace_available": true
+    },
+    {
+      "video_id": "01538",
+      "label": 0,
+      "scene": "Sub-urban",
+      "split": "evaluation",
+      "s_peak": 15.6748864737522,
+      "t_peak": 23.737704918032787,
+      "time_of_alert": null,
+      "time_of_event": null,
+      "theta_used": 6.7908898322413265,
+      "trace_available": true
+    }
+  ],
+  "theta": 6.7908898322413265,
+  "hero_trace_policy": "Event clip: t < time_of_event. Negative: all saved analysis frames. Original clip timestamps; common y scale.",
+  "confirmation": [
+    {
+      "model": "v0_original",
+      "auroc": 0.4904,
+      "auprc": 0.5379735306318573,
+      "n_positive": 50,
+      "n_negative": 50,
+      "auroc_ci_low": 0.37875,
+      "auroc_ci_high": 0.6040099999999999
+    },
+    {
+      "model": "raw_flow_no_blob",
+      "auroc": 0.4871999999999999,
+      "auprc": 0.5299361708136039,
+      "n_positive": 50,
+      "n_negative": 50,
+      "auroc_ci_low": 0.37599,
+      "auroc_ci_high": 0.59881
+    },
+    {
+      "model": "affine_residual_no_blob",
+      "auroc": 0.4876,
+      "auprc": 0.5282490835684504,
+      "n_positive": 50,
+      "n_negative": 50,
+      "auroc_ci_low": 0.37439,
+      "auroc_ci_high": 0.5996
+    },
+    {
+      "model": "frame_difference",
+      "auroc": 0.5252,
+      "auprc": 0.5478567097471545,
+      "n_positive": 50,
+      "n_negative": 50,
+      "auroc_ci_low": 0.41076,
+      "auroc_ci_high": 0.6352099999999999
+    }
+  ],
+  "primary_comparison": {
+    "candidate": "affine_residual_no_blob",
+    "comparator": "raw_flow_no_blob",
+    "method": "paired within-class clip resampling, percentile 95% intervals; calibration fixed",
+    "outcomes": {
+      "delta_auroc": {
+        "estimate": 0.00039999999999995595,
+        "ci_low": -0.013599999999999947,
+        "ci_high": 0.016000000000000014,
+        "n": 100
+      },
+      "delta_fpr": {
+        "estimate": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "n": 50
+      },
+      "delta_tpr": {
+        "estimate": -0.02,
+        "ci_low": -0.06,
+        "ci_high": 0.0,
+        "n": 50
+      }
+    }
+  },
+  "synthetic": [
+    {
+      "label": "Expanding disk",
+      "score": 0.3244070608026703
+    },
+    {
+      "label": "Receding disk",
+      "score": 0.001433172504714562
+    },
+    {
+      "label": "Translate 1 px/frame",
+      "score": 0.17057227337730746
+    },
+    {
+      "label": "Translate 2 px/frame",
+      "score": 0.3435341860893449
+    },
+    {
+      "label": "Translate 4 px/frame",
+      "score": 0.6685952000191907
+    },
+    {
+      "label": "Uniform flicker",
+      "score": 0.0
+    }
+  ],
+  "synthetic_metric": "Original 192px/60-frame deterministic stimuli, final 15-frame mean, no Nexar normalization"
+}

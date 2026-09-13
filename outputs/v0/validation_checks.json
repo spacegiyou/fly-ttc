@@ -1,0 +1,69 @@
+{
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 51,
+    "failed": 0,
+    "observed_exit_code": 0
+  },
+  "real_video_count": 100,
+  "sha256_match_count": 100,
+  "positive_pre_event_peak_hit_and_clock_checks": 50,
+  "audit_errors": [],
+  "validation_threshold_recomputed": {
+    "theta": 6.7908898322413265,
+    "fpr_target": 0.1,
+    "val_fpr": 0.1,
+    "n_val_negatives": 10,
+    "n_val_false_positives": 1,
+    "decision_rule": "S > theta",
+    "calibration_unit": "clip maximum"
+  },
+  "normalization_membership": "10 validation negatives only",
+  "saved_positive_and_false_positive_frames": 59,
+  "actual_fps_min": 23.6,
+  "actual_fps_max": 30.6,
+  "source_revision": "aa97deda5a59f00bb7187739053b7c72e14374df",
+  "interpretation": "Low held-out discrimination; no evaluation-driven threshold or parameter tuning was performed.",
+  "synthetic": {
+    "kind": "synthetic_only",
+    "opencv_version": "5.0.0",
+    "normalization": "none_unit_statistics_not_for_real_video_claims",
+    "stimuli": {
+      "loom": {
+        "stimulus": "loom",
+        "n_frames": 60,
+        "late_mean_S": 0.3244070608026703,
+        "peak_S": 0.37649345033503756,
+        "median_horizontal_flow": 0.09962879121303558
+      },
+      "recede": {
+        "stimulus": "recede",
+        "n_frames": 60,
+        "late_mean_S": 0.001433172504714562,
+        "peak_S": 0.011028736525073747,
+        "median_horizontal_flow": 0.07637366652488708
+      },
+      "translate": {
+        "stimulus": "translate",
+        "n_frames": 60,
+        "late_mean_S": 0.17057227337730746,
+        "peak_S": 0.1765214516748333,
+        "median_horizontal_flow": 1.0003550052642822
+      },
+      "flicker": {
+        "stimulus": "flicker",
+        "n_frames": 60,
+        "late_mean_S": 0.0,
+        "peak_S": 0.0,
+        "median_horizontal_flow": 0.0
+      },
+      "edge": {
+        "stimulus": "edge",
+        "n_frames": 60,
+        "late_mean_S": 0.02151701419815384,
+        "peak_S": 0.07458792039485855,
+        "median_horizontal_flow": 0.05212812125682831
+      }
+    }
+  }
+}

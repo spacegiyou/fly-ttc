@@ -1,0 +1,18 @@
+{
+  "pytest": {
+    "passed": 95,
+    "failed": 0,
+    "command": ".venv/bin/python -m pytest -q"
+  },
+  "model_clip_rows": 800,
+  "unique_real_clips": 200,
+  "sha256_matches": 200,
+  "retained_trace_peak_and_clock_audits": 474,
+  "original_v0_immutable": true,
+  "frozen_threshold_file_unchanged": true,
+  "all_calibration_thresholds_recomputed": true,
+  "new_comparison_metrics_recomputed_with_sklearn": true,
+  "scoring_code_and_annotations_unchanged": true,
+  "normal_negative_cache_removed": true,
+  "note": "No model parameters, calibration membership or confirmation selection changed after the first real-video score."
+}
