@@ -1,0 +1,23 @@
+{
+  "platforms": {
+    "x": {
+      "enabled": true,
+      "posts": [
+        {
+          "text": "Everyone is posting a fruit fly brain driving a car.\n\nI ran the test those clips skip.\n\nNot 166k neurons. A frozen looming proxy — optic-flow expansion, LPLC2-inspired — on public Nexar dashcam crashes."
+        },
+        {
+          "text": "First 100: 20 calibration, 80 evaluation. Eval AUROC 0.55.\n\nDisjoint second 100: AUROC 0.49.\n\nCamera-motion subtraction vs raw flow: +0.0004 AUROC.\n\nFrame-difference: 0.53.\n\nIt fires on an expanding disk—and on ordinary driving."
+        },
+        {
+          "text": "Same score function.\n\nLeft: labeled crash/near-miss, highway, peak 14.\nRight: normal driving, peak 16.\n\nGlobal expansion ≠ collision.\nA fly jump reflex ≠ a dashcam accident label.\n\nCode and English plots: https://github.com/spacegiyou/fly-ttc"
+        },
+        {
+          "text": "What this is not:\n• a MaleCNS / FlyWire simulation\n• a driving policy\n\nWhat it is:\na measured negative on public data, written down before the next glowing-brain demo.\n\nNexar videos stay with Nexar. Only scores and figures are in the repo."
+        }
+      ]
+    }
+  },
+  "draft_title": "fly-ttc — frozen proxy, disjoint confirmation",
+  "publish_at": "2026-09-13T13:00:00.000Z"
+}
